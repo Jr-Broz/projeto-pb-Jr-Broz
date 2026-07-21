@@ -20,6 +20,43 @@ entregas:
 
 > ⚠️ **Entrega oficial = MOODLE** (ZIP de códigos + PDF + links). **A entrega no GitHub é COMPLEMENTAR e obrigatória** — não é opcional nem mero apoio: o professor corrige o código no estado da sua **branch/tag de entrega**, e a qualidade do repositório é critério de avaliação. Moodle **e** GitHub, sempre os dois. Repositório criado pelo GitHub Classroom.
 
+## 🚀 Comece por aqui (primeiros passos, em ordem)
+
+> Faça uma vez, na sequência. Os tutoriais completos estão em [`tutoriais/`](tutoriais/) (e nas versões vivas do [repo de material](https://github.com/Prof-Dacio-INFNET/PBRoboticos_prof_dacio/tree/main/tutoriais)). Você pode ler este README pelo site do GitHub antes de clonar.
+
+1. **Configurar o WSL2 + Ubuntu 22.04** — siga [`tutoriais/setup-ros2-humble-wsl2.md`](tutoriais/setup-ros2-humble-wsl2.md), **Passos 1 e 2** (incluindo a conferência da versão `jammy`).
+
+2. **Instalar git + GitHub CLI e autenticar** (dentro do Ubuntu/WSL):
+   ```bash
+   sudo apt update && sudo apt install -y git gh
+   git config --global user.name "Seu Nome"
+   git config --global user.email "seu-email@exemplo.com"
+   gh auth login
+   ```
+
+3. **Clonar este repositório DENTRO do WSL** (na sua home `~`, **nunca** em `/mnt/c`):
+   ```bash
+   cd ~
+   gh repo clone Prof-Dacio-INFNET/projeto-pb-SEU-USUARIO
+   cd projeto-pb-SEU-USUARIO
+   ```
+
+4. **Criar as branches do projeto** (uma vez só):
+   ```bash
+   ./scripts/init-branches.sh
+   ```
+   Isso cria `dev` + `entrega-tp1..final` e te deixa na `dev`.
+
+5. **Instalar o ROS 2 Humble** (e o `uv`) — continue no [`tutoriais/setup-ros2-humble-wsl2.md`](tutoriais/setup-ros2-humble-wsl2.md), **Passos 3 a 6**, e faça o teste do turtlesim.
+
+6. **Workspace Colcon + seu primeiro pacote** — [`tutoriais/workspace-colcon.md`](tutoriais/workspace-colcon.md).
+
+7. **Preencher seus dados** — o bloco YAML no topo deste README (nome, github, projeto) e, no TP1, o [`PROJETO.md`](PROJETO.md).
+
+8. **Dia a dia e entregas** — [`consulta/git-cheatsheet.md`](consulta/git-cheatsheet.md) (fluxo dev→main→entrega) e [`consulta/regras-entrega.md`](consulta/regras-entrega.md). Dúvidas: Infnet.Online.
+
+---
+
 ## Identificação
 - **Nome:** <!-- PB:ALUNO --> _(preencha também no front-matter acima)_
 - **Usuário GitHub:** · **Disciplina:** PB Sistemas Robóticos (GRPEDCR3C1-M1-P1)
@@ -51,7 +88,7 @@ O professor corrige **executando** num clone limpo — mantenha isto funcionando
 | Final | `entrega-final` | `final` | ⬜ | ⬜ |
 
 ## Estrutura (não desmonte — é avaliada)
-`scripts/` (setup, reproduzir, init-branches) · [`ARTEFATOS.md`](ARTEFATOS.md) (links de vídeos/artefatos) · `ros2_ws/src/` (pacotes) · `docs/` (relatórios, evidências, diário, decisões) · `media/` · `consulta/` (cheatsheets) · `exemplos/` (código-base para adaptar).
+`scripts/` (setup, reproduzir, init-branches) · [`ARTEFATOS.md`](ARTEFATOS.md) (links de vídeos/artefatos) · `ros2_ws/src/` (pacotes) · `docs/` (relatórios, evidências, diário, decisões) · `media/` · `consulta/` (cheatsheets) · `tutoriais/` (guias essenciais offline) · `exemplos/` (código-base para adaptar).
 
 ## Referências da disciplina
 - Material, tutoriais, exemplos e cheatsheets vivos: [PBRoboticos_prof_dacio](https://github.com/Prof-Dacio-INFNET/PBRoboticos_prof_dacio)
