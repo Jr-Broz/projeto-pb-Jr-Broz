@@ -1,0 +1,35 @@
+# Verificação automática de estrutura — NÃO EDITAR (estrutura protegida da disciplina)
+#
+# Caráter ADVISORY (não bloqueante): este check sinaliza (X vermelho) se estruturas de
+# referência de entrega forem removidas, mas NUNCA impede push nem entrega. Se os minutos
+# de GitHub Actions da organização se esgotarem e o check não rodar, nada muda para o
+# aluno: a verificação de estrutura é refeita pelo professor na correção (fallback oficial).
+# Roda apenas na main (onde a correção olha), para economizar minutos de Actions.
+name: Verificação de estrutura
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  estrutura:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+      - name: Conferir estruturas protegidas
+        run: |
+          erro=0
+          for f in README.md PROJETO.md ARTEFATOS.md scripts/setup.sh scripts/reproduzir.sh scripts/init-branches.sh \
+                   docs/decisoes.md docs/diario.md .gitignore \
+                   consulta/git-cheatsheet.md consulta/ros2-cheatsheet.md consulta/regras-entrega.md; do
+            [ -f "$f" ] || { echo "::error::Estrutura protegida ausente: $f"; erro=1; }
+          done
+          for d in ros2_ws/src docs/relatorios docs/evidencias media; do
+            [ -d "$d" ] || { echo "::error::Pasta protegida ausente: $d"; erro=1; }
+          done
+          if [ "$erro" = "1" ]; then
+            echo "Aviso: restaure as estruturas de referência (veja o tutorial ou fale com o professor)."
+            echo "Este aviso não bloqueia seu trabalho — mas a estrutura será conferida na correção."
+            exit 1
+          fi
+          echo "Estrutura OK ✔"
