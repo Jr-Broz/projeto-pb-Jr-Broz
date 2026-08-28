@@ -1,23 +1,31 @@
-# Artefatos e Vídeos — links e fontes
+# Artefatos do projeto ARACNE
 
-> ⚠️ **Todo link abaixo deve estar acessível publicamente** (teste em **aba anônima**, sem login). Link quebrado/privado = artefato/vídeo **inexistente** para a correção. Responsabilidade sua.
-> Vídeos: YouTube "público" ou "não listado" (nunca "privado") **ou** link de drive com "qualquer pessoa com o link".
+Links de vídeos e artefatos grandes que não vão para o git.
+**Teste cada link em aba anônima antes de entregar. Inacessível = inexistente.**
 
-## Vídeos por TP (formato fixo — não altere os marcadores)
-| TP | Link (YouTube/drive) | Testado em aba anônima |
+## Vídeos de defesa
+
+| TP | Link | Visibilidade | Testado em aba anônima |
+|---|---|---|---|
+| TP1 | [COLE O LINK DO YOUTUBE] | não listado | [ ] |
+| TP2 | | | |
+| TP3 | | | |
+| TP4 | | | |
+| TP5 | | | |
+| Final | | | |
+
+## Datasets
+
+| Artefato | Como é gerado | Link |
 |---|---|---|
-| TP1 | <!-- PB:VIDEO-TP1 -->—<!-- /PB:VIDEO-TP1 --> | ⬜ |
-| TP2 | <!-- PB:VIDEO-TP2 -->—<!-- /PB:VIDEO-TP2 --> | ⬜ |
-| TP3 | <!-- PB:VIDEO-TP3 -->—<!-- /PB:VIDEO-TP3 --> | ⬜ |
-| TP4 | <!-- PB:VIDEO-TP4 -->—<!-- /PB:VIDEO-TP4 --> | ⬜ |
-| TP5 | <!-- PB:VIDEO-TP5 -->—<!-- /PB:VIDEO-TP5 --> | ⬜ |
-| Final | <!-- PB:VIDEO-FINAL -->—<!-- /PB:VIDEO-FINAL --> | ⬜ |
+| Dataset de aracnídeos (iNaturalist, licença aberta) | `scripts/baixar_dataset.py --por-classe 150` | [a partir do TP2] |
+| Atribuição das imagens | gerado junto, `dataset/atribuicao.csv` | — |
 
-_Preencha entre os marcadores, ex.:_ `<!-- PB:VIDEO-TP1 -->https://youtu.be/abc123<!-- /PB:VIDEO-TP1 -->` _(e replique o link no front-matter do README)._
+## Modelos treinados
 
-## Artefatos grandes (fora do git)
-Todo artefato derivado tem **fonte**: o comando/script que o gera (em `scripts/`) e/ou o link público.
+| Artefato | Como é gerado | Link |
+|---|---|---|
+| Classificador de espécies (ONNX) | [notebook a partir do TP2] | — |
 
-| Artefato | TP | Tamanho | Como é gerado (comando) | Link público | Testado ⬜ |
-|---|---|---|---|---|---|
-| ex.: cnn_faixas.h5 | TP4 | 45 MB | `python3 scripts/treinar_cnn.py --epochs 50` | https://… | ⬜ |
+> Todo artefato derivado tem fonte versionada. O script que gera o
+> dataset/modelo fica no repositório; o arquivo pesado fica em link público.
