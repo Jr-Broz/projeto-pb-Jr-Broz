@@ -1,0 +1,12 @@
+# Parametros da segmentacao. Ajuste aqui, nao no codigo.
+# Depois de mudar YAML, RECOMPILE: --symlink-install nao linka config.
+vision_node:
+  ros__parameters:
+    h_min_a: 0
+    h_max_a: 10
+    h_min_b: 170
+    h_max_b: 180
+    s_min: 110
+    v_min: 60
+    area_minima: 700
+    dominio: "aracnideos"

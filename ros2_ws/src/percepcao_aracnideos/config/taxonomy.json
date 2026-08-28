@@ -1,0 +1,97 @@
+{
+  "_nota": "Chave = classe predita pelo modelo. O classificador so escolhe a chave; toda a linhagem vem daqui.",
+
+  "viuva-negra": {
+    "reino": "Animalia",
+    "filo": "Arthropoda",
+    "subfilo": "Chelicerata",
+    "classe": "Arachnida",
+    "ordem": "Araneae",
+    "familia": "Theridiidae",
+    "genero": "Latrodectus",
+    "especie": "Latrodectus curacaviensis",
+    "nome_popular": "Viuva-negra",
+    "caracteristicas": [
+      "Abdome globoso e escuro com manchas vermelhas dorsais",
+      "Femea mede cerca de 1 cm de corpo; macho e bem menor",
+      "Teia irregular, montada em locais abrigados proximos ao solo",
+      "Comportamento pouco agressivo, pica apenas quando comprimida",
+      "Genero de importancia medica (latrodectismo)"
+    ]
+  },
+
+  "teia-dourada": {
+    "reino": "Animalia",
+    "filo": "Arthropoda",
+    "subfilo": "Chelicerata",
+    "classe": "Arachnida",
+    "ordem": "Araneae",
+    "familia": "Araneidae",
+    "genero": "Trichonephila",
+    "especie": "Trichonephila clavipes",
+    "nome_popular": "Aranha-de-teia-dourada",
+    "caracteristicas": [
+      "Corpo alongado e cilindrico, femea com ate 4 cm",
+      "Tufos escuros de pelos nas articulacoes das pernas",
+      "Seda de coloracao dourada, visivel contra a luz",
+      "Teia orbicular grande e permanente, em area de vegetacao",
+      "Dimorfismo sexual acentuado; macho e diminuto",
+      "Sem importancia medica"
+    ]
+  },
+
+  "aranha-de-grama": {
+    "reino": "Animalia",
+    "filo": "Arthropoda",
+    "subfilo": "Chelicerata",
+    "classe": "Arachnida",
+    "ordem": "Araneae",
+    "familia": "Lycosidae",
+    "genero": "Lycosa",
+    "especie": "Lycosa erythrognatha",
+    "nome_popular": "Aranha-de-grama, aranha-lobo",
+    "caracteristicas": [
+      "Corpo robusto acinzentado com desenho longitudinal escuro",
+      "Queliceras de coloracao avermelhada, tracco diagnostico",
+      "Oito olhos em tres fileiras, com dois olhos medianos grandes",
+      "Nao constroi teia; caca ativamente no solo e na grama",
+      "Femea carrega a ooteca presa as fiandeiras",
+      "Picada de importancia medica leve, com lesao local"
+    ]
+  },
+
+  "caranguejeira": {
+    "reino": "Animalia",
+    "filo": "Arthropoda",
+    "subfilo": "Chelicerata",
+    "classe": "Arachnida",
+    "ordem": "Araneae",
+    "familia": "Theraphosidae",
+    "genero": "Avicularia",
+    "especie": "Avicularia avicularia",
+    "nome_popular": "Caranguejeira-rosa, aranha-papa-moscas",
+    "caracteristicas": [
+      "Porte grande, envergadura de pernas podendo passar de 10 cm",
+      "Pilosidade densa cobrindo corpo e pernas",
+      "Extremidades das pernas com tonalidade clara ou rosada",
+      "Habito arboricola, constroi retiros tubulares em troncos",
+      "Libera pelos urticantes do abdome como defesa",
+      "Sem veneno de importancia medica; irritacao e causada pelos pelos"
+    ]
+  },
+
+  "negativo": {
+    "reino": "-",
+    "filo": "-",
+    "subfilo": "-",
+    "classe": "-",
+    "ordem": "-",
+    "familia": "-",
+    "genero": "-",
+    "especie": "-",
+    "nome_popular": "Nao identificado",
+    "caracteristicas": [
+      "Nenhuma das quatro especies do escopo foi reconhecida na imagem"
+    ]
+  }
+}

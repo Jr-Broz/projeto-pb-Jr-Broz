@@ -1,0 +1,16 @@
+=== ros2 service list ===
+/vision/status
+/vision_node/describe_parameters
+/vision_node/get_parameter_types
+/vision_node/get_parameters
+/vision_node/list_parameters
+/vision_node/set_parameters
+/vision_node/set_parameters_atomically
+
+=== ros2 service call /vision/status ===
+waiting for service to become available...
+requester: making request: std_srvs.srv.Trigger_Request()
+
+response:
+std_srvs.srv.Trigger_Response(success=True, message='ARACNE | candidatos a aracnideo no ultimo frame: 1 | maior area: 752 px | frames processados: 344 | stamp: 1787957078.635')
+

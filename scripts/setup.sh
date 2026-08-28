@@ -1,17 +1,22 @@
 #!/usr/bin/env bash
-# setup.sh — instala TUDO que o seu projeto precisa ALÉM do setup padrão da disciplina.
-# (Ubuntu 22.04/WSL2 + ROS 2 Humble + Python 3.10 já instalados — ver tutoriais da disciplina.)
-# O professor executa este script num ambiente limpo, antes de reproduzir.sh.
+# Dependencias alem do padrao da disciplina.
+# O professor roda este script num clone limpo.
 set -e
 
-# 1. Dependências de sistema (exemplos — descomente/adicione conforme SEU projeto)
-# sudo apt install -y ros-humble-navigation2 ros-humble-nav2-bringup ros-humble-slam-toolbox
+echo "[setup] instalando dependencias do projeto ARACNE"
 
-# 2. Dependências ROS declaradas nos package.xml
-# rosdep install --from-paths ros2_ws/src --ignore-src -r -y
+sudo apt update
+sudo apt install -y \
+    python3-opencv \
+    ros-humble-cv-bridge \
+    ros-humble-rqt-graph \
+    ros-humble-rqt-image-view \
+    python3-colcon-common-extensions \
+    v4l-utils
 
-# 3. Dependências Python (padrão da disciplina: uv — https://docs.astral.sh/uv/)
-# [ -d .venv ] || uv venv --system-site-packages .venv   # venv que enxerga o rclpy do ROS
-# . .venv/bin/activate && uv pip install -r requirements.txt   # nunca sudo uv / --system
+# Dependencias declaradas nos package.xml
+if command -v rosdep >/dev/null 2>&1; then
+    rosdep install --from-paths ros2_ws/src --ignore-src -r -y || true
+fi
 
-echo "[setup] concluído"
+echo "[setup] concluido"

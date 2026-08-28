@@ -1,0 +1,25 @@
+=== ros2 topic hz /vision/contagem (12 s) ===
+average rate: 14.963
+	min: 0.033s max: 0.118s std dev: 0.01232s window: 78
+average rate: 14.967
+	min: 0.033s max: 0.118s std dev: 0.01181s window: 93
+average rate: 14.971
+	min: 0.033s max: 0.118s std dev: 0.01156s window: 108
+average rate: 14.963
+	min: 0.033s max: 0.118s std dev: 0.01165s window: 124
+average rate: 14.948
+	min: 0.033s max: 0.118s std dev: 0.01123s window: 140
+average rate: 14.977
+	min: 0.033s max: 0.118s std dev: 0.01090s window: 156
+
+=== ros2 topic list ===
+/camera/image_raw
+/parameter_events
+/rosout
+/vision/anotada
+/vision/contagem
+/vision/mask
+
+=== contagem atual ===
+data: 1
+---

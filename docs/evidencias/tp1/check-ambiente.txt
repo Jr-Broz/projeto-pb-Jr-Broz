@@ -1,14 +1,35 @@
-== Checagem de ambiente — PB Sistemas Robóticos ==
-  [32m✓[0m Ubuntu 22.04 (jammy)
-  [32m✓[0m ROS 2 Humble instalado
-  [32m✓[0m comando ros2 disponível
-  [32m✓[0m colcon
-  [32m✓[0m git
-  [32m✓[0m gh autenticado
-  · uv ausente (opcional agora; necessário nos TPs 2+)
-  · ROS_DOMAIN_ID=vazio — defina seu nº de chamada no ~/.bashrc
-  [32m✓[0m dentro de um repositório git (projeto-pb-tp1)
-  [31m✗[0m branch dev ausente — rode ./scripts/init-branches.sh
-  [32m✓[0m repo no filesystem do WSL
+=== ros2 doctor ===
 
-⚠️  Há itens pendentes acima — veja os tutoriais e rode de novo.
+   NETWORK CONFIGURATION
+inet         : 127.0.0.1
+inet4        : ['127.0.0.1']
+inet6        : ['::1']
+netmask      : 255.0.0.0
+device       : lo
+flags        : 73<RUNNING,UP,LOOPBACK>
+mtu          : 65536
+inet         : 10.0.2.15
+inet4        : ['10.0.2.15']
+ether        : 08:00:27:d8:19:73
+inet6        : ['fd17:625c:f037:2:7b9:b404:30e3:410e', 'fd17:625c:f037:2:7b8e:1ce0:eef4:b70a', 'fe80::ea64:3d48:4fd9:1d7e%enp0s3']
+netmask      : 255.255.255.0
+device       : enp0s3
+flags        : 4163<RUNNING,MULTICAST,UP,BROADCAST>
+mtu          : 1500
+broadcast    : 10.0.2.255
+
+   PACKAGE VERSIONS
+
+=== versoes ===
+ROS_DISTRO=humble
+python 3.10.12
+opencv 4.5.4
+Distributor ID:	Ubuntu
+Description:	Ubuntu 22.04.5 LTS
+Release:	22.04
+Codename:	jammy
+
+=== pacote visivel para o ament ===
+percepcao_aracnideos
+percepcao_aracnideos camera_node
+percepcao_aracnideos vision_node
