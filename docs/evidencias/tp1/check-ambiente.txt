@@ -1,0 +1,14 @@
+== Checagem de ambiente — PB Sistemas Robóticos ==
+  [32m✓[0m Ubuntu 22.04 (jammy)
+  [32m✓[0m ROS 2 Humble instalado
+  [32m✓[0m comando ros2 disponível
+  [32m✓[0m colcon
+  [32m✓[0m git
+  [32m✓[0m gh autenticado
+  · uv ausente (opcional agora; necessário nos TPs 2+)
+  · ROS_DOMAIN_ID=vazio — defina seu nº de chamada no ~/.bashrc
+  [32m✓[0m dentro de um repositório git (projeto-pb-tp1)
+  [31m✗[0m branch dev ausente — rode ./scripts/init-branches.sh
+  [32m✓[0m repo no filesystem do WSL
+
+⚠️  Há itens pendentes acima — veja os tutoriais e rode de novo.
