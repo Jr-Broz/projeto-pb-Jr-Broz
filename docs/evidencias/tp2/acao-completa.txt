@@ -1,0 +1,40 @@
+[INFO] [1791836015.983783440] [varredura_action_client]: aguardando o action server...
+[INFO] [1791836017.247240598] [varredura_action_client]: enviando goal | duracao=12.0s | classe_alvo="qualquer" | limiar=-1.0
+[INFO] [1791836017.254514202] [varredura_action_client]: goal ACEITO — acompanhando feedback
+[INFO] [1791836017.813478877] [varredura_action_client]: [01] [#.......................]   4.7% | t=  0.6s | frames=   4 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836018.373210091] [varredura_action_client]: [02] [##......................]   9.3% | t=  1.1s | frames=   8 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836018.895974268] [varredura_action_client]: [03] [###.....................]  13.7% | t=  1.6s | frames=  12 | no frame=1 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836019.409525956] [varredura_action_client]: [04] [####....................]  18.0% | t=  2.2s | frames=  15 | no frame=1 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836019.938676025] [varredura_action_client]: [05] [#####...................]  22.4% | t=  2.7s | frames=  20 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836020.475759656] [varredura_action_client]: [06] [######..................]  26.9% | t=  3.2s | frames=  23 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836020.996749163] [varredura_action_client]: [07] [#######.................]  31.2% | t=  3.7s | frames=  27 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836021.519444752] [varredura_action_client]: [08] [########................]  35.5% | t=  4.3s | frames=  30 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836022.055499949] [varredura_action_client]: [09] [#########...............]  40.0% | t=  4.8s | frames=  35 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836022.578512759] [varredura_action_client]: [10] [##########..............]  44.4% | t=  5.3s | frames=  38 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836023.123598042] [varredura_action_client]: [11] [###########.............]  48.9% | t=  5.9s | frames=  42 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836023.640142145] [varredura_action_client]: [12] [############............]  53.2% | t=  6.4s | frames=  46 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836024.199647021] [varredura_action_client]: [13] [#############...........]  57.9% | t=  6.9s | frames=  50 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836024.768755014] [varredura_action_client]: [14] [###############.........]  62.6% | t=  7.5s | frames=  54 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836025.270988312] [varredura_action_client]: [15] [################........]  66.8% | t=  8.0s | frames=  58 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836025.815233729] [varredura_action_client]: [16] [#################.......]  71.3% | t=  8.6s | frames=  62 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836026.363535164] [varredura_action_client]: [17] [##################......]  75.8% | t=  9.1s | frames=  66 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836026.887549873] [varredura_action_client]: [18] [###################.....]  80.3% | t=  9.6s | frames=  71 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836027.437648438] [varredura_action_client]: [19] [####################....]  84.9% | t= 10.2s | frames=  75 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836027.970718240] [varredura_action_client]: [20] [#####################...]  89.3% | t= 10.7s | frames=  78 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836028.483237045] [varredura_action_client]: [21] [######################..]  93.6% | t= 11.2s | frames=  82 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836029.044722936] [varredura_action_client]: [22] [#######################.]  98.2% | t= 11.8s | frames=  86 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836029.302344223] [varredura_action_client]: ==============================================================
+[INFO] [1791836029.302901449] [varredura_action_client]: RESULT FINAL
+[INFO] [1791836029.303424092] [varredura_action_client]:   status codigo      : 4
+[INFO] [1791836029.310115880] [varredura_action_client]:   sucesso            : True
+[INFO] [1791836029.310715067] [varredura_action_client]:   mensagem           : varredura concluida: 2 alvos unicos em 88 frames (7.3 fps)
+[INFO] [1791836029.311333006] [varredura_action_client]:   frames processados : 88
+[INFO] [1791836029.311891536] [varredura_action_client]:   deteccoes totais   : 2
+[INFO] [1791836029.312415420] [varredura_action_client]:   alvos unicos       : 2
+[INFO] [1791836029.312978031] [varredura_action_client]:   confianca media    : 0.521
+[INFO] [1791836029.313527468] [varredura_action_client]:   confianca maxima   : 0.542
+[INFO] [1791836029.314061250] [varredura_action_client]:   duracao real       : 12.05 s
+[INFO] [1791836029.314664521] [varredura_action_client]:   fps medio          : 7.30
+[INFO] [1791836029.315346421] [varredura_action_client]:     classe alvo-hsv           2
+[INFO] [1791836029.315934820] [varredura_action_client]:   feedbacks recebidos: 22
+[INFO] [1791836029.316477382] [varredura_action_client]: ==============================================================

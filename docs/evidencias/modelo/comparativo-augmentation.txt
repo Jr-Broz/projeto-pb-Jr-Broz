@@ -1,0 +1,58 @@
+════════════════════════════════════════════════════════════════════════
+ G4.6 — COMPARAÇÃO COM E SEM DATA AUGMENTATION
+════════════════════════════════════════════════════════════════════════
+
+MODELOS
+  arquitetura .......... MobileNetV3-Small (transfer learning, ImageNet)
+  dados ................ 740 imagens, 5 classes, 592 treino / 148 validação
+  split ................ estratificado, semente 0 — IDÊNTICO nos dois
+  augmentation ......... força 0,8 (geometria + cor + ruído + JPEG)
+  tempo de treino ...... 2.35 min com aug | 0.87 min sem
+
+RESULTADO DIRETO (o que o enunciado pede)
+                              com aug    sem aug    ganho
+  validação limpa              98.65%     98.65%   +0.00
+  impressa + webcam            97.30%     96.62%   +0.68
+  queda de domínio              1.35       2.03
+
+  >> RESSALVA: a diferença no teste impresso é de UMA imagem em 148,
+     e as matrizes de confusão na validação limpa são IDÊNTICAS.
+     Com n=148, isso é ruído. O experimento, como desenhado, NÃO
+     distingue os dois modelos.
+
+POR QUE O TESTE NÃO DISTINGUIU — E O QUE FOI FEITO
+  Hipótese: efeito de teto. Com 5 classes visualmente distintas e
+  transfer learning, ambos os modelos saturam perto de 98%, e não
+  sobra margem para a diferença aparecer.
+
+  Teste: escalar a severidade da degradação e medir onde (se em
+  algum ponto) as curvas se separam. 5 sementes por nível.
+
+   sev |          com aug |          sem aug |    ganho | consistência
+  --------------------------------------------------------------------
+   0.0 |      98.65% ±0.00 |      98.65% ±0.00 |   +0.00 | —
+   1.0 |      97.84% ±0.27 |      97.84% ±0.51 |   +0.00 | —
+   2.0 |      95.14% ±0.99 |      92.57% ±1.13 |   +2.57 | 5/5 sementes
+   3.0 |      80.14% ±3.10 |      72.30% ±2.42 |   +7.84 | 5/5 sementes
+   4.0 |      57.70% ±3.30 |      52.03% ±2.38 |   +5.68 | 5/5 sementes
+   5.0 |      30.14% ±2.12 |      32.03% ±1.99 |   -1.89 | invertido
+
+CONCLUSÃO
+  O augmentation FUNCIONA, mas só é mensurável na faixa de transição.
+  O pico está em severidade 3,0: +7,8 pontos, com o modelo treinado
+  com augmentation vencendo em 5 de 5 sementes — a separação (7,8)
+  supera a soma dos desvios padrão (3,1 + 2,4 = 5,5).
+
+  Nas pontas não há o que medir: em severidade ≤1 os dois acertam
+  quase tudo (teto) e em severidade 5 os dois falham (piso). Em 5,0
+  a diferença inclusive inverte — a essa altura o sinal da imagem já
+  foi destruído e o que sobra é sorte.
+
+  Isso explica por que a comparação direta pedida pelo enunciado deu
+  resultado nulo: o conjunto de validação é fácil demais para ela.
+  Reportar '+0,68 pontos' como se fosse efeito seria ler ruído como
+  sinal. O ganho real existe e tem tamanho medido: +7,8 pontos, onde
+  o problema é difícil.
+
+  Evidência visual: curva-augmentation.png
+════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,12 @@
+# Servico de controle do detector: ajusta limiar e liga/desliga a trilha.
+# Campos com valor sentinela (-1.0 / 2) significam "nao alterar".
+
+float32 limiar_confianca     # novo limiar (0.0-1.0); -1.0 = manter
+int32   tamanho_trilha       # quantos pontos da trilha desenhar; -1 = manter
+int32   desenhar_trilha      # 0=nao, 1=sim, 2=manter
+---
+bool    sucesso
+string  mensagem
+float32 limiar_atual
+int32   tamanho_trilha_atual
+bool    trilha_ativa

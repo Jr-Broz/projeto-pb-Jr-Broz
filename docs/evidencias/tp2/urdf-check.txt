@@ -1,0 +1,43 @@
+=== estrutura do URDF ===
+robo   : aracne_bot
+links  : 11
+joints : 10
+sensores gazebo: 3
+
+--- arvore ---
+base_footprint
+  |  [base_footprint_para_base_link : fixed]
+  +- base_link
+    |  [roda_esquerda_joint : continuous]
+    +- roda_esquerda_link
+    |  [roda_direita_joint : continuous]
+    +- roda_direita_link
+    |  [roda_boba_joint : fixed]
+    +- roda_boba_link
+    |  [mastro_joint : fixed]
+    +- mastro_link
+      |  [camera_tilt_joint : revolute]
+      +- camera_base_link
+        |  [camera_joint : fixed]
+        +- camera_link
+          |  [camera_optical_joint : fixed]
+          +- camera_optical_frame
+    |  [lidar_joint : fixed]
+    +- lidar_link
+    |  [imu_joint : fixed]
+    +- imu_link
+
+=== check_urdf ===
+robot name is: aracne_bot
+---------- Successfully Parsed XML ---------------
+root Link: base_footprint has 1 child(ren)
+    child(1):  base_link
+        child(1):  imu_link
+        child(2):  lidar_link
+        child(3):  mastro_link
+            child(1):  camera_base_link
+                child(1):  camera_link
+                    child(1):  camera_optical_frame
+        child(4):  roda_boba_link
+        child(5):  roda_direita_link
+        child(6):  roda_esquerda_link

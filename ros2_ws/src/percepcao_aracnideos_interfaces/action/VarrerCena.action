@@ -1,0 +1,30 @@
+# Acao principal do projeto: varrer a cena por um tempo determinado,
+# acumulando deteccoes e devolvendo metricas ao final.
+# Suporta cancelamento a qualquer momento.
+
+# ---------- GOAL ----------
+float32 duracao_s              # por quanto tempo varrer
+string  classe_alvo            # "" = qualquer classe
+float32 limiar_confianca       # limiar so para esta varredura; -1.0 = usar o do no
+---
+# ---------- RESULT ----------
+bool    sucesso
+string  mensagem
+int32   frames_processados
+int32   deteccoes_totais
+int32   alvos_unicos           # ids de rastreio distintos vistos
+float32 confianca_media
+float32 confianca_maxima
+float32 duracao_real_s
+float32 fps_medio
+string[] classes_vistas
+int32[]  contagem_por_classe
+---
+# ---------- FEEDBACK ----------
+float32 progresso              # 0.0 a 1.0
+float32 tempo_decorrido_s
+int32   frames_processados
+int32   deteccoes_no_frame
+int32   deteccoes_acumuladas
+float32 melhor_confianca
+string  estado                 # "varrendo", "cancelando", ...

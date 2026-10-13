@@ -8,7 +8,7 @@ Links de vídeos e artefatos grandes que não vão para o git.
 | TP | Link | Visibilidade | Testado em aba anônima |
 |---|---|---|---|
 | TP1 | [COLE O LINK DO YOUTUBE] | não listado | [ ] |
-| TP2 | | | |
+| TP2 | https://www.youtube.com/watch?v=Ysj4WVNpgzs | público | [x] |
 | TP3 | | | |
 | TP4 | | | |
 | TP5 | | | |
@@ -18,14 +18,19 @@ Links de vídeos e artefatos grandes que não vão para o git.
 
 | Artefato | Como é gerado | Link |
 |---|---|---|
-| Dataset de aracnídeos (iNaturalist, licença aberta) | `scripts/baixar_dataset.py --por-classe 150` | [a partir do TP2] |
+| Dataset de aracnídeos (740 imagens, 5 classes) | `scripts/baixar_dataset.py --por-classe 150` | [COLE O LINK] |
 | Atribuição das imagens | gerado junto, `dataset/atribuicao.csv` | — |
 
 ## Modelos treinados
 
 | Artefato | Como é gerado | Link |
 |---|---|---|
-| Classificador de espécies (ONNX) | [notebook a partir do TP2] | — |
+| `yolov8n.onnx` (detector, 13 MB) | `scripts/baixar_modelo.sh` | upstream público |
+| `classificador_aranhas.onnx` (5 espécies, 6,1 MB) | `treino/treinar.py --dados train --saida modelo` | [COLE O LINK] |
+
+Métricas do classificador em `docs/evidencias/modelo/modelo_info.json`
+(classes, acurácias e matrizes de confusão). O `.json` é texto e está
+versionado; o `.onnx` não.
 
 > Todo artefato derivado tem fonte versionada. O script que gera o
 > dataset/modelo fica no repositório; o arquivo pesado fica em link público.

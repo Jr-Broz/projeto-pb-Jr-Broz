@@ -1,0 +1,32 @@
+[INFO] [1791836030.147302709] [varredura_action_client]: aguardando o action server...
+[INFO] [1791836032.168921449] [varredura_action_client]: enviando goal | duracao=25.0s | classe_alvo="qualquer" | limiar=-1.0
+[INFO] [1791836032.240548142] [varredura_action_client]: goal ACEITO — acompanhando feedback
+[WARN] [1791836032.241222537] [varredura_action_client]: cancelamento automatico agendado para 6.0s
+[INFO] [1791836032.762794817] [varredura_action_client]: [01] [........................]   2.4% | t=  0.6s | frames=   4 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836033.309529737] [varredura_action_client]: [02] [#.......................]   4.5% | t=  1.1s | frames=   8 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836033.846700285] [varredura_action_client]: [03] [#.......................]   6.7% | t=  1.7s | frames=  12 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836034.412253531] [varredura_action_client]: [04] [##......................]   9.0% | t=  2.2s | frames=  17 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836034.953152790] [varredura_action_client]: [05] [##......................]  11.1% | t=  2.8s | frames=  21 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836035.476915944] [varredura_action_client]: [06] [###.....................]  13.2% | t=  3.3s | frames=  25 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836036.047632721] [varredura_action_client]: [07] [###.....................]  15.5% | t=  3.9s | frames=  29 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836036.567634456] [varredura_action_client]: [08] [####....................]  17.6% | t=  4.4s | frames=  32 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836037.119944324] [varredura_action_client]: [09] [####....................]  19.8% | t=  4.9s | frames=  36 | no frame=1 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836037.625028913] [varredura_action_client]: [10] [#####...................]  21.8% | t=  5.5s | frames=  40 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[INFO] [1791836038.148900783] [varredura_action_client]: [11] [#####...................]  23.9% | t=  6.0s | frames=  44 | no frame=2 | acumulado=2 | melhor=0.54 | varrendo
+[WARN] [1791836038.242639522] [varredura_action_client]: >>> ENVIANDO PEDIDO DE CANCELAMENTO <<<
+[INFO] [1791836038.256828703] [varredura_action_client]: [12] [#####...................]  24.3% | t=  6.1s | frames=   0 | no frame=0 | acumulado=0 | melhor=0.00 | cancelando
+[INFO] [1791836038.259598805] [varredura_action_client]: ==============================================================
+[INFO] [1791836038.260144519] [varredura_action_client]: RESULT FINAL
+[INFO] [1791836038.260659810] [varredura_action_client]:   status codigo      : 5
+[INFO] [1791836038.261187163] [varredura_action_client]:   sucesso            : False
+[INFO] [1791836038.261702794] [varredura_action_client]:   mensagem           : varredura cancelada em 6.1s de 25.0s — metricas parciais preservadas
+[INFO] [1791836038.262225730] [varredura_action_client]:   frames processados : 45
+[INFO] [1791836038.262735925] [varredura_action_client]:   deteccoes totais   : 2
+[INFO] [1791836038.263259218] [varredura_action_client]:   alvos unicos       : 2
+[INFO] [1791836038.263770194] [varredura_action_client]:   confianca media    : 0.521
+[INFO] [1791836038.264290495] [varredura_action_client]:   confianca maxima   : 0.542
+[INFO] [1791836038.264840217] [varredura_action_client]:   duracao real       : 6.08 s
+[INFO] [1791836038.265383984] [varredura_action_client]:   fps medio          : 7.40
+[INFO] [1791836038.265911668] [varredura_action_client]:     classe alvo-hsv           2
+[INFO] [1791836038.266462608] [varredura_action_client]:   feedbacks recebidos: 12
+[INFO] [1791836038.266987228] [varredura_action_client]: ==============================================================

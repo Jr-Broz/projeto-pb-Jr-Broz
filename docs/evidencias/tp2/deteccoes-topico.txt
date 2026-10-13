@@ -1,0 +1,72 @@
+=== ros2 node list ===
+/camera_node
+/deteccao_node
+/varredura_action_server
+/vision_node
+
+=== ros2 topic list ===
+/aracne/deteccoes
+/aracne/imagem_anotada
+/camera/image_raw
+/parameter_events
+/rosout
+/vision/anotada
+/vision/contagem
+/vision/mask
+
+=== ros2 action list ===
+/aracne/varrer_cena
+
+=== ros2 service list | grep aracne ===
+/aracne/configurar_deteccao
+
+=== /aracne/deteccoes (uma amostra) ===
+header:
+  stamp:
+    sec: 1791835984
+    nanosec: 688949636
+  frame_id: camera_link
+deteccoes:
+- classe: alvo-hsv
+  confianca: 0.5418261885643005
+  x: 433
+  y: 208
+  w: 146
+  h: 118
+  id_rastreio: 1
+  cx_suavizado: 508
+  cy_suavizado: 267
+  velocidade_px_s: 97.50450897216797
+- classe: alvo-hsv
+  confianca: 0.5001171827316284
+  x: 135
+  y: 187
+  w: 104
+  h: 84
+  id_rastreio: 2
+  cx_suavizado: 186
+  cy_suavizado: 229
+  velocidade_px_s: 158.62623596191406
+total: 2
+limiar_confianca_usado: 0.44999998807907104
+modelo: hsv-fallback
+tempo_inferencia_ms: 2.6379239559173584
+qualidade_score: 0.12036304920911789
+brilho_medio: 210.07135009765625
+contraste: 16.77217674255371
+nitidez: 260.44000244140625
+problemas_imagem: superexposta,baixo contraste
+preproc_aplicado: ''
+resgatadas_histerese: 0
+rejeitadas_histerese: 0
+---
+
+=== taxa em /aracne/deteccoes (regua leve, 10 s) ===
+average rate: 6.939
+	min: 0.096s max: 0.218s std dev: 0.02903s window: 37
+average rate: 7.007
+	min: 0.096s max: 0.218s std dev: 0.02838s window: 45
+average rate: 6.974
+	min: 0.096s max: 0.275s std dev: 0.03304s window: 52
+average rate: 6.975
+	min: 0.096s max: 0.275s std dev: 0.03330s window: 59

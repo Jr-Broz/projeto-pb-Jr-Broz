@@ -1,0 +1,23 @@
+EXPERIMENTO 2 — HISTERESE DE LIMIAR
+
+cena  : 1 alvo real, 150 frames. A confianca cai de 0,62
+        para ~0,32 nos frames 40-75 (sombra) e para ~0,38
+        nos frames 98-112 (alvo girou).
+ruido : falsos positivos fracos (0,20-0,42) em 45% dos
+        frames, em posicoes aleatorias.
+ideal : 1 id, 0 fantasmas, alvo presente em 150/150 frames
+
+                          estrategia |  ids | fantasmas |   no alvo | resgatadas
+----------------------------------------------------------------------------------------
+   limiar unico 0.45 (sem histerese) |    3 |         2 |   101/150 |          0
+      limiar unico 0.25 (permissivo) |   14 |        13 |   150/150 |          0
+  HISTERESE nasce 0.45 / mantem 0.25 |    1 |         0 |   150/150 |         49
+  HISTERESE nasce 0.50 / mantem 0.20 |    1 |         0 |   150/150 |         49
+
+LEITURA: limiar unico alto perde o alvo quando a confianca
+cai e cria id novo no retorno. Limiar unico baixo mantem o
+alvo, mas promove cada falso positivo a trilha. A histerese
+tem a sensibilidade do limiar baixo com a especificidade do
+alto, porque exige evidencia forte para NASCER e fraca
+apenas para CONTINUAR — o mesmo principio do limiar duplo
+do detector de bordas de Canny.

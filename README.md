@@ -10,7 +10,7 @@ turma: "GRPEDCR3C1-M1-P1"
 projeto: "ARACNE — percepção de aracnídeos por câmera com ROS 2"
 entregas:
   tp1:   { entregue: true,  branch: "entrega-tp1",   tag: "tp1",   video: "", data: "2026-08-28" }
-  tp2:   { entregue: false, branch: "entrega-tp2",   tag: "tp2",   video: "", data: "" }
+  tp2:   { entregue: true,  branch: "entrega-tp2",   tag: "tp2",   video: "https://www.youtube.com/watch?v=Ysj4WVNpgzs", data: "2026-10-12" }
   tp3:   { entregue: false, branch: "entrega-tp3",   tag: "tp3",   video: "", data: "" }
   tp4:   { entregue: false, branch: "entrega-tp4",   tag: "tp4",   video: "", data: "" }
   tp5:   { entregue: false, branch: "entrega-tp5",   tag: "tp5",   video: "", data: "" }
@@ -69,7 +69,11 @@ entregas:
 
 O problema é de percepção visual em ambiente não controlado: o agente observa, segmenta a região de interesse, extrai características e classifica. É o mesmo pipeline de um robô de inspeção, aplicado a um domínio com relevância prática — no Brasil, a gravidade de acidentes com aranhas depende fortemente da rapidez na identificação do exemplar.
 
-No **TP1**, o pipeline cobre aquisição de imagem, conversão BGR→HSV, segmentação por cor, contagem de alvos e um serviço de status sob demanda. O classificador de espécies entra a partir do **TP4** (G4.6).
+No **TP1**, o pipeline cobre aquisição de imagem, conversão BGR→HSV, segmentação por cor, contagem de alvos e um serviço de status sob demanda.
+
+No **TP2**, entram interfaces customizadas (`.msg`/`.srv`/`.action`), uma action assíncrona com feedback e cancelamento, detecção YOLO com rastreamento por filtro de Kalman, parametrização em YAML com callback de validação e o modelo URDF do robô. O relatório é [`docs/relatorios/relatorio-tp2.md`](docs/relatorios/relatorio-tp2.md) e o passo a passo de execução está em [`RODAR-TP2.md`](RODAR-TP2.md).
+
+O classificador de espécies entra a partir do **TP4** (G4.6) — já treinado e verificado antecipadamente; evidências em `docs/evidencias/modelo/`.
 
 Proposta e planejamento completos: [`PROJETO.md`](PROJETO.md) · Termo de Abertura de Projeto: [`docs/TAP_ARACNE.pdf`](docs/TAP_ARACNE.pdf) · Relatório do TP1: [`docs/relatorios/relatorio-tp1.md`](docs/relatorios/relatorio-tp1.md)
 
@@ -136,7 +140,7 @@ rqt_graph
 | TP | Branch | Tag | Entregue no Moodle | Vídeo (ver ARTEFATOS.md) |
 |---|---|---|---|---|
 | TP1 | `entrega-tp1` | `tp1` | ✅ | ⬜ |
-| TP2 | `entrega-tp2` | `tp2` | ⬜ | ⬜ |
+| TP2 | `entrega-tp2` | `tp2` | ✅ | ✅ |
 | TP3 | `entrega-tp3` | `tp3` | ⬜ | ⬜ |
 | TP4 | `entrega-tp4` | `tp4` | ⬜ | ⬜ |
 | TP5 | `entrega-tp5` | `tp5` | ⬜ | ⬜ |

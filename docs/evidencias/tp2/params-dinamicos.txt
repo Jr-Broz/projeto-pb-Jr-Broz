@@ -1,0 +1,43 @@
+=== parametros declarados ===
+  avaliar_qualidade
+  classes_interesse
+  desenhar_trilha
+  frequencia_hz
+  kalman_aceleracao_std
+  kalman_medicao_std
+  limiar_confianca
+  limiar_manutencao
+  limiar_nms
+  modelo_path
+  preproc_ativo
+  preproc_clahe_clip
+  preproc_modo
+  preproc_wb_forca
+  rastreio_dist_max
+  rastreio_max_sumido
+  tamanho_entrada
+  tamanho_trilha
+  use_sim_time
+
+=== valor inicial ===
+Double value is: 0.45
+
+=== alterando em tempo de execucao ===
+Set parameter successful
+Double value is: 0.7
+
+=== alterando o tamanho da trilha ===
+Set parameter successful
+Integer value is: 120
+
+=== o mesmo efeito pelo servico customizado ===
+waiting for service to become available...
+requester: making request: percepcao_aracnideos_interfaces.srv.ConfigurarDeteccao_Request(limiar_confianca=0.35, tamanho_trilha=60, desenhar_trilha=1)
+
+response:
+percepcao_aracnideos_interfaces.srv.ConfigurarDeteccao_Response(sucesso=True, mensagem='aplicado: limiar_nascimento=0.35, trilha=60, desenhar=True', limiar_atual=0.3499999940395355, tamanho_trilha_atual=60, trilha_ativa=True)
+
+
+=== de volta ao valor de projeto ===
+Set parameter successful
+Double value is: 0.45

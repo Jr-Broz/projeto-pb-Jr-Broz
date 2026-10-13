@@ -1,0 +1,36 @@
+EXPERIMENTO 1 — PONTO DE RUPTURA SOB DEGRADACAO
+
+detector : yolov8n.onnx
+alvo     : detectar ao menos 2 objeto(s)
+metrica  : menor intensidade de degradacao em que o detector falha
+           (maior = mais robusto; "-" = aguentou ate 3.0)
+
+          degradacao |  sem preproc |  com preproc | veredito
+--------------------------------------------------------------------------
+              escuro |          0.8 |          1.0 | preproc AGUENTA MAIS
+               claro |            - |            - | igual
+     baixo_contraste |          1.0 |          1.2 | preproc AGUENTA MAIS
+               ruido |          0.8 |          0.4 | preproc quebra antes
+                blur |          3.0 |          2.6 | preproc quebra antes
+   dominante_amarela |            - |            - | igual
+                jpeg |            - |            - | igual
+
+RESUMO: preproc melhorou 2, piorou 2, empatou 3 de 7
+
+CONCLUSAO
+O efeito da normalizacao e MISTO: ajuda em algumas
+degradacoes e atrapalha em outras, sem ganho liquido.
+
+A razao e a mesma nos tres casos: um detector aprendido ja
+viu variacao de iluminacao no treino (augmentation), entao
+normalizar a entrada pode empurra-la para FORA da
+distribuicao que o modelo conhece. Ganho em contraste vem
+junto com perda em ruido, porque realcar contraste realca
+o ruido tambem.
+
+Por isso preproc_ativo tem padrao FALSE. A robustez deste
+pipeline vem da histerese de limiar e do rastreamento por
+Kalman (experimento 2), nao do filtro de imagem — e essa
+conclusao vem da medicao, nao da intuicao. Ligar por
+reflexo o que os numeros nao sustentam seria o oposto de
+engenharia.

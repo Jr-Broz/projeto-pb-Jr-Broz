@@ -1,0 +1,114 @@
+# ═══════════════════════════════════════════════════════════════════
+# ARACNE — parametros do sistema (TP2)
+#
+# Tudo que se ajusta na demonstracao mora aqui. Nenhum destes valores
+# esta escrito no codigo.
+#
+# Alteracao em tempo de execucao:
+#   ros2 param list /deteccao_node
+#   ros2 param get  /deteccao_node limiar_confianca
+#   ros2 param set  /deteccao_node limiar_confianca 0.70
+#
+# ATENCAO: com --symlink-install os .py viram links, mas os arquivos de
+# config/ sao COPIADOS. Se voce mudar este YAML e o no continuar com os
+# valores antigos, recompile antes de suspeitar do codigo.
+# ═══════════════════════════════════════════════════════════════════
+
+camera_node:
+  ros__parameters:
+    fonte: "webcam"          # webcam | video | sintetico
+    dispositivo: 0
+    arquivo: ""
+    largura: 640
+    altura: 480
+    fps: 15.0
+    fourcc: "MJPG"           # comprimido: reduz o trafego no passthrough USB
+
+deteccao_node:
+  ros__parameters:
+    # ---------- modelo ----------
+    # Caminho absoluto para o .onnx. Vazio, ou arquivo inexistente,
+    # faz o no degradar para segmentacao HSV sem quebrar o grafo.
+    # No TP4 este caminho passa a apontar para os pesos treinados nas
+    # quatro especies — trocar o modelo e mudar esta linha, nao o codigo.
+    modelo_path: ""
+    tamanho_entrada: 640
+    # ---------- histerese de limiar (robustez) ----------
+    # Dois limiares, mesma ideia do detector de bordas de Canny:
+    #   limiar_confianca  = para CRIAR uma trilha nova   (alto)
+    #   limiar_manutencao = para MANTER uma ja existente (baixo)
+    #
+    # Medido em cena com o alvo entrando na sombra e falsos positivos
+    # fracos espalhados:
+    #   limiar unico 0.45  -> 3 ids   (trilha morre e renasce)
+    #   limiar unico 0.25  -> 14 ids  (13 fantasmas de falso positivo)
+    #   histerese 0.45/0.25 -> 1 id, 0 fantasmas, alvo em 150/150 frames
+    limiar_confianca: 0.45
+    limiar_manutencao: 0.25
+    limiar_nms: 0.45
+    frequencia_hz: 10.0
+
+    # Lista branca de classes. Vazia = aceita todas.
+    # Com o YOLOv8n pre-treinado em COCO, "person" da a demo mais
+    # confiavel: basta aparecer na frente da camera.
+    classes_interesse: [""]
+
+    # ---------- rastreamento ----------
+    desenhar_trilha: true
+    tamanho_trilha: 48          # pontos guardados por alvo
+    rastreio_dist_max: 90.0     # raio de associacao, em px
+    rastreio_max_sumido: 12     # frames tolerados sem medicao
+
+    # ---------- filtro de Kalman ----------
+    # Os dois parametros tem significado fisico:
+    #   aceleracao_std : quanto o alvo muda de velocidade (px/s^2).
+    #                    Maior = mais reativo e mais tremido.
+    #   medicao_std    : quanto a bbox do detector treme (px).
+    #                    Maior = confia menos na medicao.
+    # A RAZAO entre eles decide o ganho. Sintonia errada nao piora um
+    # pouco: o filtro diverge e a trilha descola do alvo.
+    kalman_aceleracao_std: 400.0
+    kalman_medicao_std: 10.0
+
+    # ---------- pre-processamento (DESLIGADO de proposito) ----------
+    # Medido em 7 degradacoes x 2 intensidades sobre imagem real:
+    # normalizar NUNCA melhorou o ponto de ruptura do YOLO, e em cena
+    # escura o PIOROU (aguentava ate intensidade 2.2 sem tratamento,
+    # so 1.2 com). Motivo: o YOLOv8 foi treinado com augmentation forte
+    # e ja viu essa variacao; normalizar empurra a imagem para fora da
+    # distribuicao que ele conhece.
+    #
+    # Fica aqui, parametrizavel, porque ajuda o detector classico e a
+    # inspecao visual. Ligue com:
+    #   ros2 param set /deteccao_node preproc_ativo true
+    preproc_ativo: false
+    preproc_modo: "auto"        # auto | sempre | off
+    preproc_clahe_clip: 2.5
+    preproc_wb_forca: 0.8
+
+    # Medir a qualidade da imagem custa ~1 ms e sempre vale: um sistema
+    # que SABE que nao esta enxergando vale mais que um que se cala.
+    avaliar_qualidade: true
+
+varredura_action_server:
+  ros__parameters:
+    duracao_maxima_s: 300.0
+    duracao_padrao_s: 20.0
+
+varredura_action_client:
+  ros__parameters:
+    duracao_s: 15.0
+    classe_alvo: ""
+    limiar_confianca: -1.0      # -1.0 = usar o limiar do no
+    cancelar_apos_s: -1.0       # >0 agenda cancelamento automatico
+
+vision_node:
+  ros__parameters:
+    h_min_a: 0
+    h_max_a: 10
+    h_min_b: 170
+    h_max_b: 180
+    s_min: 110
+    v_min: 60
+    area_minima: 700
+    dominio: "aracnideos"
